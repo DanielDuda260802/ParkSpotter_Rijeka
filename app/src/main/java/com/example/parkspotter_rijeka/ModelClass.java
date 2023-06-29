@@ -2,6 +2,8 @@ package com.example.parkspotter_rijeka;
 
 public class ModelClass {
     String parking_name;
+
+    String status_sustava;
     String url;
     String kategorija;
     int kapacitet, slobodno;
@@ -9,9 +11,10 @@ public class ModelClass {
 
 
 
-    public ModelClass(String parking_name, int kapacitet, int slobodno, String url, String kategorija)
+    public ModelClass(String parking_name, String status_sustava, int kapacitet, int slobodno, String url, String kategorija)
     {
         this.parking_name = parking_name;
+        this.status_sustava = status_sustava;
         this.kapacitet = kapacitet;
         this.slobodno = slobodno;
         this.url = url;
@@ -19,6 +22,13 @@ public class ModelClass {
     }
     public String getParkingName() {
         return parking_name;
+    }
+    public void setStatus_sustava(String status_sustava) {
+        this.status_sustava = status_sustava;
+    }
+
+    public String getStatus_sustava() {
+        return status_sustava;
     }
 
     public void setKapacitet(int kapacitet) {
