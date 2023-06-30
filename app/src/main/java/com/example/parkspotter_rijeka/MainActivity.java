@@ -34,17 +34,16 @@ public class MainActivity extends AppCompatActivity {
         SlobodniParking_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SlobodniParking fetchData = new SlobodniParking(parkingLive);
-                fetchData.fetchData(MainActivity.this);
-                adapter.notifyDataSetChanged();
+                SlobodniParking fetchData = new SlobodniParking(parkingLive, MainActivity.this, recyclerView);
+                fetchData.execute();
             }
         });
+
         NepoznatoParking_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NedostupniPodaciParking fetchData = new NedostupniPodaciParking(parkingLive);
-                fetchData.fetchData(MainActivity.this);
-                adapter.notifyDataSetChanged();
+                NedostupniPodaciParking nedostupniPodaciParking = new NedostupniPodaciParking(parkingLive, MainActivity.this, recyclerView);
+                nedostupniPodaciParking.execute();
             }
         });
     }

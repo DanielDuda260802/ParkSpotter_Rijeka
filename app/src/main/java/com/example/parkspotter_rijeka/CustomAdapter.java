@@ -4,7 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.content.Intent;
+import android.net.Uri;
+
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,19 +48,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.slobodno.setText(String.valueOf(currentData.getSlobodno()));
         holder.url.setText(String.valueOf(currentData.getUrl()));
         holder.kategorija.setText(String.valueOf(currentData.getKategorija()));
+        String url = currentData.getUrl();
+        holder.myButton.setTag(url); // pohrana URL u button view
 
         String stasusSustava = currentData.getStatus_sustava();
 
-        if(stasusSustava == "")
-        {
+        if (stasusSustava == "") {
             holder.parking_name.setText(currentData.getParkingName());
             holder.kategorija.setText(String.valueOf(currentData.getKategorija()));
             holder.kapacitet.setText(String.valueOf(currentData.getKapacitet()));
             holder.slobodno.setText(String.valueOf(currentData.getSlobodno()));
             holder.url.setText(String.valueOf(currentData.getUrl()));
-        }
-        else
-        {
+        } else {
             holder.parking_name.setText(currentData.getParkingName());
             holder.kategorija.setText(String.valueOf(currentData.getKategorija()));
             holder.kapacitet.setText("Nedostupni podaci");
@@ -71,17 +76,26 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
+        Button myButton;
         TextView parking_name, status_sustava, kapacitet, slobodno, url, kategorija;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            myButton = itemView.findViewById(R.id.Detalji);
             parking_name = itemView.findViewById(R.id.parkingName);
             status_sustava = itemView.findViewById(R.id.StatusSustava);
             kapacitet = itemView.findViewById(R.id.kapacitet);
             slobodno = itemView.findViewById(R.id.slobodnaMjesta);
             url = itemView.findViewById(R.id.parkingURL);
             kategorija = itemView.findViewById(R.id.kategorija);
+
+            myButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // dodaj otvaranje linka
+                }
+            });
         }
     }
 }
