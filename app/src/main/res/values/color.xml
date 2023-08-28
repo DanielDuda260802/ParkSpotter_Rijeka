@@ -6,4 +6,7 @@
 
     <color name="blue_1">#00101f</color>
     <color name="blue_5">#0078ff</color>
+
+    <color name="my_primary">#5E35B1</color>
+    <color name="my_secondary">#673AB7</color>
 </resources>
