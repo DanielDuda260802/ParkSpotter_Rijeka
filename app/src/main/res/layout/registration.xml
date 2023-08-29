@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rijeka_login"
+    tools:context=".RegistrationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/my_primary"
+        android:alpha="0.7"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_above="@id/card_view"
+        android:padding="28dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ParkSpotterRijeka"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="32sp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/parkspotter_logo"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dobrodošli"
+                android:textColor="@color/my_primary"
+                android:textSize="28dp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:alpha="0.7"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/emailNovi"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="textEmailAddress"
+                android:drawableEnd="@drawable/done_icon"
+                android:contentDescription="Unos adrese e-pošte"
+                android:importantForAccessibility="no"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:alpha="0.7"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/usernameNovi"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="textVisiblePassword|textNoSuggestions"
+                android:drawableEnd="@drawable/done_icon"
+                android:contentDescription="Unosite username"
+                android:importantForAccessibility="no"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lozinka"
+                android:alpha="0.7"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/passwordNovi"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="textPassword"
+                android:drawableEnd="@drawable/password_icon"
+                android:contentDescription="Unos lozinke"
+                android:importantForAccessibility="no"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ponovno potvrdite lozinku"
+                android:alpha="0.7"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/repassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="textPassword"
+                android:drawableEnd="@drawable/password_icon"
+                android:contentDescription="Unos lozinke"
+                android:importantForAccessibility="no"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/RegistrationBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Kreiraj račun"
+                app:cornerRadius="32dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/LoginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Prijavi se"
+                android:layout_marginTop="16dp"
+                app:cornerRadius="32dp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

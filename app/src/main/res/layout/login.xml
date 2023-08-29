@@ -68,17 +68,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="Username"
             android:alpha="0.7"
             android:textStyle="bold"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:inputType="textEmailAddress"
-            android:drawableEnd="@drawable/done_icon"
-            android:contentDescription="Unos adrese e-pošte"
-            android:importantForAccessibility="no"/>
+        <AutoCompleteTextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Username"
+        android:inputType="text"
+        android:completionThreshold="1"
+        android:dropDownHeight="200dp"
+        android:layout_marginTop="16dp"/>
+
 
         <View
             android:layout_width="wrap_content"
@@ -90,7 +93,8 @@
             android:alpha="0.7"
             android:textStyle="bold"/>
 
-        <EditText
+        <AutoCompleteTextView
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:inputType="textPassword"
@@ -102,6 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <CheckBox
+                android:id="@+id/remember_me_chkb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Zapamti me"
@@ -109,6 +114,7 @@
                 android:alpha="0.7"/>
 
             <TextView
+                android:id="@+id/forgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Zaboravio sam lozinku"

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rijeka_login"
+    tools:context=".PasswordActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/my_primary"
+        android:alpha="0.7"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_above="@id/card_view"
+        android:padding="28dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ParkSpotterRijeka"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="32sp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/parkspotter_logo"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+            <TextView
+                android:id="@+id/username_reset_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/my_primary"
+                android:textSize="28dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/password_reset"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="50dp"
+                android:hint="password"
+                android:layout_below="@+id/username_reset_text"/>
+
+            <EditText
+                android:id="@+id/repassword_reset"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="50dp"
+                android:hint="Retype password"
+                android:layout_below="@+id/repassword_reset"/>
+            
+            <Button
+                android:id="@+id/reset_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Potvrdi"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

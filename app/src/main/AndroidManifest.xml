@@ -25,6 +25,13 @@
         <activity
             android:name=".MainActivity">
         </activity>
+        <activity
+            android:name=".RegistrationActivity">
+        </activity>
+        <activity android:name="com.example.parkspotter_rijeka.PasswordActivity" />
+        <activity
+            android:name=".ResetActivity">
+        </activity>
     </application>
 
 </manifest>
