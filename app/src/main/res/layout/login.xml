@@ -87,6 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"/>
         <TextView
+            android:id="@+id/pasVis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Password"
@@ -98,8 +99,9 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:inputType="textPassword"
-            android:drawableEnd="@drawable/password_icon"
-            android:contentDescription="Unos lozinke"
+            android:hint="password"
+            android:longClickable="false"
+            android:contentDescription="Unesite lozinku"
             android:importantForAccessibility="no"/>
 
         <RelativeLayout

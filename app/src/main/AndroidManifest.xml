@@ -28,7 +28,7 @@
         <activity
             android:name=".RegistrationActivity">
         </activity>
-        <activity android:name="com.example.parkspotter_rijeka.PasswordActivity" />
+        <activity android:name=".PasswordActivity" android:exported="true"/>
         <activity
             android:name=".ResetActivity">
         </activity>

@@ -71,7 +71,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:inputType="textEmailAddress"
-                android:drawableEnd="@drawable/done_icon"
                 android:contentDescription="Unos adrese e-pošte"
                 android:importantForAccessibility="no"/>
 
@@ -90,7 +89,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:inputType="textVisiblePassword|textNoSuggestions"
-                android:drawableEnd="@drawable/done_icon"
                 android:contentDescription="Unosite username"
                 android:importantForAccessibility="no"/>
 
@@ -109,7 +107,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:inputType="textPassword"
-                android:drawableEnd="@drawable/password_icon"
                 android:contentDescription="Unos lozinke"
                 android:importantForAccessibility="no"/>
 
@@ -129,7 +126,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:inputType="textPassword"
-                android:drawableEnd="@drawable/password_icon"
                 android:contentDescription="Unos lozinke"
                 android:importantForAccessibility="no"/>
 

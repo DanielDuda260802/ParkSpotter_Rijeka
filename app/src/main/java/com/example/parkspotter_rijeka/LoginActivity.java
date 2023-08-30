@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -76,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         registrationButton.setOnClickListener(new View.OnClickListener() {
             @Override

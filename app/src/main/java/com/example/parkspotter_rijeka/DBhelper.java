@@ -5,15 +5,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DBhelper extends SQLiteOpenHelper {
     public DBhelper (Context context) {
-        super(context, "Login.db", null, 1);
+        super(context, "Accounts.db", null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("create Table users(username Text primary key, password Text)");
+        myDB.execSQL("create Table users(username Text primary key, email Text, password Text )");
     }
 
     @Override
@@ -34,22 +35,22 @@ public class DBhelper extends SQLiteOpenHelper {
             return true;
         }
     }
-    public Boolean insertData (String username, String password){
+    public Boolean insertData(String email, String username, String password) {
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
+        contentValues.put("email", email);
         contentValues.put("password", password);
-        long result = myDB.insert("users", null,contentValues);
 
-        if(result == -1){
+        long result = myDB.insert("users", null, contentValues);
+        if (result == -1) {
+            Log.e("InsertData", "Insert failed");
             return false;
-        }
-        else {
+        } else {
+            Log.d("InsertData", "Insert successful");
             return true;
         }
     }
-
-
 
     public boolean checkUsername (String username){
         SQLiteDatabase myDB = this.getWritableDatabase();
@@ -71,4 +72,16 @@ public class DBhelper extends SQLiteOpenHelper {
             return false;
         }
     }
+    public boolean checkUsernameEmail(String username, String email) {
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ? AND email = ?", new String[]{username, email});
+
+        if(cursor.getCount() > 0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }

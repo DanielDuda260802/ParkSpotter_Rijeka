@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 public class RegistrationActivity extends AppCompatActivity {
@@ -32,37 +33,35 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
+                String em = email.getText().toString();
                 String repass = repassword.getText().toString();
 
-                if(user.equals("") || pass.equals("") || repass.equals("")){
+                Log.d("RegistrationActivity", "User: " + user + ", Email: " + em + ", Password: " + pass + ", RePassword: " + repass);
+
+                if (user.equals("") || pass.equals("") || em.equals("") || repass.equals("")) {
                     Toast.makeText(RegistrationActivity.this, "Potrebno je popuniti sva polja.", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    if(pass.equals(repass)){
+                } else {
+                    if (pass.equals(repass)) {
                         Boolean usercheckResult = myDB.checkUsername(user);
-                        if(usercheckResult == false) {
-                            Boolean regResult = myDB.insertData(user, pass);
-                            if(regResult == true){
+                        if (usercheckResult == false) {
+                            Boolean regResult = myDB.insertData(em, user, pass);
+                            if (regResult == true) {
                                 Toast.makeText(RegistrationActivity.this, "Uspješna registracija.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(intent);
-                            }
-                            else{
+                            } else {
                                 Toast.makeText(RegistrationActivity.this, "Neuspješna registracija", Toast.LENGTH_SHORT).show();
                             }
-                        }
-                        else{
+                        } else {
                             Toast.makeText(RegistrationActivity.this, "Korisnik već postoji.\n Pokušajte ponovno.", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                    else
-                    {
-                    Toast.makeText(RegistrationActivity.this, "Lozinke se ne podudaraju.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(RegistrationActivity.this, "Lozinke se ne podudaraju.", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
