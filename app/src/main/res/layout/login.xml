@@ -21,17 +21,10 @@
             android:layout_above="@id/card_view"
             android:padding="28dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ParkSpotterRijeka"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="32sp"/>
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/parkspotter_logo"/>
         </LinearLayout>
 
@@ -39,7 +32,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    app:cardCornerRadius="28dp"
+    app:cardCornerRadius="48dp"
     android:layout_marginBottom="-20dp"
     android:id="@+id/card_view">
 
@@ -53,18 +46,20 @@
             android:layout_height="wrap_content"
             android:text="Dobrodošli"
             android:textColor="@color/my_primary"
+            android:fontFamily="sans-serif-medium"
             android:textSize="28dp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Molim ulogirajte se u aplikaciju pomoću vaših podataka"
-            android:alpha="0.7"/>
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:text="Molim ulogirajte se u aplikaciju pomoću vaših podataka" />
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="30dp"/>
+            android:layout_height="20dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,7 +75,7 @@
         android:inputType="text"
         android:completionThreshold="1"
         android:dropDownHeight="200dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="5dp"/>
 
 
         <View
@@ -132,6 +127,9 @@
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:text="Prijavi se"
             app:cornerRadius="32dp"/>
 
@@ -143,6 +141,9 @@
             android:id="@+id/RegistrationButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:text="Kreiraj račun"
             app:cornerRadius="32dp"/>
 

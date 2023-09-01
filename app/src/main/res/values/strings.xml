@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ParkSpotter-Rijeka</string>
+    <string name="otvori">Otvori</string>
+    <string name="zatvori">Zatvori</string>
 </resources>

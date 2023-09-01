@@ -21,17 +21,10 @@
         android:layout_above="@id/card_view"
         android:padding="28dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ParkSpotterRijeka"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="32sp"/>
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/parkspotter_logo"/>
     </LinearLayout>
 
@@ -40,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:cardCornerRadius="28dp"
-        android:layout_marginBottom="-20dp"
+        android:layout_marginBottom="-22dp"
         android:id="@+id/card_view">
 
         <LinearLayout
@@ -51,14 +44,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dobrodošli"
+                android:text="Izrada računa"
                 android:textColor="@color/my_primary"
                 android:textSize="28dp"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Unesite tražene podatke kako biste stvorili račun."/>
+
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"/>
+                android:layout_height="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -76,7 +75,7 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"/>
+                android:layout_height="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,7 +116,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ponovno potvrdite lozinku"
+                android:text="Ponovno unesite lozinku"
                 android:alpha="0.7"
                 android:textStyle="bold"/>
 
@@ -133,6 +132,9 @@
                 android:id="@+id/RegistrationBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="18dp"
                 android:text="Kreiraj račun"
                 app:cornerRadius="32dp"/>
 
@@ -140,8 +142,11 @@
                 android:id="@+id/LoginBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="18dp"
                 android:text="Prijavi se"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="5dp"
                 app:cornerRadius="32dp"/>
 
         </LinearLayout>

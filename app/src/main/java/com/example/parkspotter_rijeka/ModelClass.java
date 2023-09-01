@@ -20,6 +20,7 @@ public class ModelClass {
         this.url = url;
         this.kategorija = kategorija;
     }
+
     public String getParkingName() {
         return parking_name;
     }
