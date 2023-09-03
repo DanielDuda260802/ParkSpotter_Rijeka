@@ -1,5 +1,4 @@
 package com.example.parkspotter_rijeka;
-
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
@@ -16,7 +15,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 public class CheckUsernameTest {
-
     private DBhelper dbHelper;
     private SQLiteDatabase database;
 

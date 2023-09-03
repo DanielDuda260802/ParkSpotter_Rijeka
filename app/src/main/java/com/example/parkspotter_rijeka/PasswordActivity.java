@@ -1,5 +1,4 @@
 package com.example.parkspotter_rijeka;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

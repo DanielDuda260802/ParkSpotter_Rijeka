@@ -44,9 +44,7 @@
             Button loginButton = findViewById(R.id.loginButton);
             Button registrationButton = findViewById(R.id.RegistrationButton);
 
-
             setupAutoCompleteTextView();
-
             getPreferencesData();
 
             DBhelper myDB = new DBhelper(this);

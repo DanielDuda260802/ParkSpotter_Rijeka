@@ -7,14 +7,17 @@
 
     <item
         android:id="@+id/slobodna"
-        android:title="Slobodna mjesta" />
+        android:icon="@drawable/car_free"
+        android:title="Stanje parkirališta uživo" />
 
     <item
         android:id="@+id/ostala"
-        android:title="Ostala mjesta" />
+        android:icon="@drawable/baseline_local_parking_24"
+        android:title="Ostala parkirališta" />
     
     <item
         android:id="@+id/odjava"
+        android:icon="@drawable/logout_icon"
         android:title="Odjava" />
 
 </menu>

@@ -9,8 +9,6 @@ public class ModelClass {
     int kapacitet, slobodno;
 
 
-
-
     public ModelClass(String parking_name, String status_sustava, int kapacitet, int slobodno, String url, String kategorija)
     {
         this.parking_name = parking_name;
@@ -61,15 +59,5 @@ public class ModelClass {
 
     public void setKategorija(String kategorija) {
         this.kategorija = kategorija;
-    }
-
-    private boolean isFavorite; // Dodajte ovaj atribut
-
-    public boolean isFavorite() {
-        return isFavorite;
-    }
-
-    public void setFavorite(boolean favorite) {
-        isFavorite = favorite;
     }
 }

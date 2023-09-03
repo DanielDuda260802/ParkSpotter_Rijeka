@@ -54,7 +54,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.url.setText(String.valueOf(currentData.getUrl()));
         holder.kategorija.setText(String.valueOf(currentData.getKategorija()));
         String url = currentData.getUrl();
-        holder.Detalji_btn.setTag(url); // pohrana URL u button view
+        holder.Detalji_btn.setTag(url);
 
         String stasusSustava = currentData.getStatus_sustava();
 
@@ -99,13 +99,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 @Override
                 public void onClick(View v) {
                     // Dohvat URL-a
-                    String url = (String) Detalji_btn.getTag(); // Ovdje promijenjeno Detalji_btn
+                    String url = (String) Detalji_btn.getTag();
 
                     // Provjera jesu li URL i dalje dostupni
                     if (!url.isEmpty()) {
                         // Otvaranje URL-a u web pregledniku
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                        itemView.getContext().startActivity(intent); // Korištenje itemView.getContext()
+                        itemView.getContext().startActivity(intent);
                     } else {
                         Toast.makeText(itemView.getContext(), "URL nije dostupan.", Toast.LENGTH_SHORT).show();
                     }

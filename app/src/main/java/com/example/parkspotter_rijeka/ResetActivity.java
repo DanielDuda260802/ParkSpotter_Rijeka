@@ -11,11 +11,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ResetActivity extends AppCompatActivity {
-
     TextView username;
     EditText password, repassword;
     Button confirm_btn;
-
     DBhelper DB;
 
     @Override

@@ -24,14 +24,13 @@ public class SlobodniParking extends AsyncTask<Void, Void, ArrayList<ModelClass>
     private ProgressDialog progressDialog;
     private ArrayList<ModelClass> parkingLive;
     private Context context;
-    private Handler mainHandler;
+
     private RecyclerView recyclerView;
 
     public SlobodniParking(ArrayList<ModelClass> parkingLive, Context context, RecyclerView recyclerView) {
         this.parkingLive = parkingLive;
         this.context = context;
         this.recyclerView = recyclerView;
-        mainHandler = new Handler();
     }
 
     @Override
