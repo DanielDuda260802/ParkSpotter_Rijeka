@@ -63,5 +63,13 @@ public class ModelClass {
         this.kategorija = kategorija;
     }
 
+    private boolean isFavorite; // Dodajte ovaj atribut
 
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
 }

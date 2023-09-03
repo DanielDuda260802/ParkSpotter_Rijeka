@@ -47,32 +47,10 @@
             android:id="@+id/recyclerviewId"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/SlobodnoParking"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-        <!-- U prototipu nije bilo izbornika pa su ostali gumbi -->
-        <Button
-            android:id="@+id/SlobodnoParking"
-            android:layout_width="204dp"
-            android:layout_height="60dp"
-            android:visibility="gone"
-            android:text="Slobodna parkirališta"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/OstaliParking"
-            android:layout_width="204dp"
-            android:layout_height="60dp"
-            android:visibility="gone"
-            android:text="Ostala parkirališta"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/SlobodnoParking"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerviewId"
-            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

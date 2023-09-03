@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class DBhelper extends SQLiteOpenHelper {
     public DBhelper (Context context) {
-        super(context, "Accounts.db", null, 2);
+        super(context, "Korisnicki_Racuni.db", null, 3);
     }
 
     @Override
@@ -83,5 +83,9 @@ public class DBhelper extends SQLiteOpenHelper {
             return false;
         }
     }
-
+    public void deleteUser(String username) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("users", "username=?", new String[]{username});
+        db.close();
+    }
 }

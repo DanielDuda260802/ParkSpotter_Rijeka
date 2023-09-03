@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.collection.ArraySet;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private CustomAdapter adapter;
 
     private ArrayList<ModelClass> parkingLive = new ArrayList<>();
-    private static final String PREFS_Favorite = "Prefs_favorite";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,42 +53,42 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.otvori, R.string.zatvori);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.otvori, R.string.zatvori);
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         SlobodniParking fetchData = new SlobodniParking(parkingLive, MainActivity.this, recyclerView);
         fetchData.execute();
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.navi_drawer, menu);
-        return true;
-    }
+        NavigationView navigationView = findViewById(R.id.navigationDrawer);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int id = menuItem.getItemId();
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId(); // Retrieve the id of the selected menu item
+                if (id == R.id.slobodna) {
+                    SlobodniParking fetchData = new SlobodniParking(parkingLive, MainActivity.this, recyclerView);
+                    fetchData.execute();
+                    return true;
+                } else if (id == R.id.ostala) {
+                    NedostupniPodaciParking nedostupniPodaciParking = new NedostupniPodaciParking(parkingLive, MainActivity.this, recyclerView);
+                    nedostupniPodaciParking.execute();
+                    return true;
+                } else if (id == R.id.odjava) {
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
 
-        if (id == R.id.slobodna) {
-            SlobodniParking fetchData = new SlobodniParking(parkingLive, MainActivity.this, recyclerView);
-            fetchData.execute();
-            return true;
-        } else if (id == R.id.ostala) {
-            NedostupniPodaciParking nedostupniPodaciParking = new NedostupniPodaciParking(parkingLive, MainActivity.this, recyclerView);
-            nedostupniPodaciParking.execute();
-            return true;
-        } else if (id == R.id.odjava) {
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
+                return false;
+            }
+        });
     }
 }
 
